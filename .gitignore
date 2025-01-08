@@ -1,1 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.swo
 
+# Environment Variables
+.env
+
+# Telethon Session
+*.session
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# Logs
+logs/
+*.log
+
+# Results
+results.json
+
+# Photos
+photos/
+
+# IDEs
+.idea/
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
