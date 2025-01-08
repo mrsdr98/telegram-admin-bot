@@ -44,7 +44,7 @@ if [ -d "$REPO_DIR" ]; then
     echo_info "Repository already cloned."
 else
     echo_info "Cloning the repository..."
-    sudo -u $USERNAME git clone https://github.com/your-github-username/telegram-admin-bot.git $REPO_DIR
+    sudo -u $USERNAME git clone https://github.com/mrsdr98/telegram-admin-bot.git $REPO_DIR
 fi
 
 # Navigate to the project directory
