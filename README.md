@@ -47,5 +47,5 @@
 در ماشین محلی یا سرور خود، به دایرکتوری مورد نظر رفته و مخزن را کلون کنید:
 
 ```bash
-git clone https://github.com/your-github-username/telegram-admin-bot.git
+git clone https://github.com/mrsdr98/telegram-admin-bot.git
 cd telegram-admin-bot
