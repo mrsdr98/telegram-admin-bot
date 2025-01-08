@@ -1,1 +1,25 @@
 
+name: Deploy Telegram Admin Bot
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.4
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Deploy to Server
+      run: |
+        rsync -avz --exclude 'venv/' --exclude '.git/' --exclude 'logs/' --exclude '__pycache__/' ./ ${SERVER_USER}@${SERVER_IP}:/home/telegrambot/telegram-admin-bot/
+        ssh ${SERVER_USER}@${SERVER_IP} 'cd /home/telegrambot/telegram-admin-bot && source venv/bin/activate && pip install -r requirements.txt && sudo systemctl restart telegrambot'
